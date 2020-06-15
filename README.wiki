@@ -1,0 +1,11 @@
+= RDoc code documentation Mockup =
+== Index of Examples ==
+Modifications, if applicable, include stripping the Ruby comment header <tt># </tt> from documentations embedded in ruby scripts and those stated additionally per file index. All of these modifications belongs to the '''Public Domain''', if any applicable.
+; <tt>[[RDoc-Store.rdoc]]</tt>
+: Partial copy-paste of <tt>RDoc::Store<tt> with zero additional modifications.
+:; Raw Documentation Source
+:: [https://github.com/ruby/rdoc GitHub: ruby/rdoc][https://github.com/ruby/rdoc/blob/master/lib/rdoc/store.rb /lib/rdoc/store.rb]
+:; Generated Documentation Reference
+:: https://ruby.github.io/rdoc/RDoc/Store.html
+:; Copying License
+:: [[LICENSE RDoc.rdoc]] (https://github.com/ruby/rdoc/blob/master/LICENSE.rdoc)

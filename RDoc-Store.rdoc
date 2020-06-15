@@ -1,0 +1,41 @@
+=class RDoc::Store
+[Parent] Object
+A set of rdoc data for a single project (gem, path, etc.).
+
+The store manages reading and writing ri data for a project and maintains a
+cache of methods, classes and ancestors in the store.
+The store maintains a #cache of its contents for faster lookup.  After
+adding items to the store it must be flushed using #save_cache.  The cache
+contains the following structures:
+   @cache = {
+     :ancestors        => {}, # class name => ancestor names
+     :attributes       => {}, # class name => attributes
+     :class_methods    => {}, # class name => class methods
+     :instance_methods => {}, # class name => instance methods
+     :modules          => [], # classes and modules in this store
+     :pages            => [], # page names
+   }
+==Attributes
+===c_class_variables
+(R)
+Maps C variables to class or module names for each parsed C file.
+===c_singleton_class_variables
+(R)
+Maps C variables to singleton class names for each parsed C file.
+===cache
+(R)
+The contents of the Store
+==Public Class Methods
+===new(path = nil, type = nil)
+Creates a new Store of +type+ that will load or save to +path+
+==Public Instance Methods
+===add_c_enclosure(variable, namespace)
+Adds +module+ as an enclosure (namespace) for the given +variable+ for C
+files.
+===add_c_variables(c_parser)
+Adds C variables from an RDoc::Parser::C
+===add_file(absolute_name, relative_name = absolute_name)
+Adds the file with +name+ as an RDoc::TopLevel to the store. Returns the
+created RDoc::TopLevel.
+===all_classes()
+Returns all classes discovered by RDoc
